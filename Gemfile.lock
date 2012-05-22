@@ -3,6 +3,7 @@ PATH
   specs:
     dj_mon (0.0.1)
       bootstrap-sass (~> 2.0.2)
+      bootswatch-rails (~> 0.0.11)
       delayed_job_active_record (~> 0.3)
       haml (~> 3.1)
       jquery-rails (~> 2.0)
@@ -41,6 +42,8 @@ GEM
       multi_json (~> 1.0)
     arel (3.0.2)
     bootstrap-sass (2.0.3)
+    bootswatch-rails (0.0.11)
+      railties (>= 3.1)
     builder (3.0.0)
     delayed_job (3.0.2)
       activesupport (~> 3.0)
