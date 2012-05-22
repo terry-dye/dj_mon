@@ -1,5 +1,15 @@
-%h3
-  All Jobs(#{@delayed_jobs.size})
+%header#overview.jumbotron.subhead
+  %p.lead Delayed Jobs &mdash; #{@delayed_jobs.size}
+  .subnav
+    %ul.nav.nav-pills
+      %li.active
+        = link_to "All", "#"
+      %li
+        = link_to "Failed", "#"
+      %li
+        = link_to "Active", "#"
+      %li
+        = link_to "Queued", "#"
 
 %table.table.table-striped
   %thead
