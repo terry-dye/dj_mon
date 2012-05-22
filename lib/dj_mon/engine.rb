@@ -4,8 +4,8 @@ module DjMon
     isolate_namespace DjMon
 
     if Rails.version > "3.1"
-      initializer "DJMon precompile hook" do |app|
-        app.config.assets.precompile += ['dj_mon.js', 'dj_mon.css']
+      config.after_initialize "DJMon precompile hook" do
+        Rails.application.config.assets.precompile += ['dj_mon.js', 'dj_mon.css']
       end
     end
 
