@@ -1,5 +1,5 @@
 module DjMon
-  class DelayedJobsController < RailsBlogEngine::ApplicationController
+  class DelayedJobsController < DjMon::ApplicationController
     def index
       @delayed_jobs = Delayed::Jobs.all
     end
