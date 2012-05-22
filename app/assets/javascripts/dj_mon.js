@@ -1,2 +1,2 @@
 //= require jquery
-//= require twitter/bootstrap
+//= require bootstrap-modal
