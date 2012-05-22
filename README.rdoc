@@ -1,3 +1,10 @@
 = DJ Mon
 
 A Rails engine based frontend for Delayed Job.
+
+= Notes
+
+- app.config.assets.precompile += ['dj_mon.js', 'dj_mon.css'] for apps <= 3.1
+- gem install dj_mon
+- mount DjMon::Engine => 'dj_mon'
+- basic auth
