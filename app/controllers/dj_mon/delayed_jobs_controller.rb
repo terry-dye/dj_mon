@@ -29,7 +29,8 @@ module DjMon
 
     def authenticate
       authenticate_or_request_with_http_basic do |username, password|
-        username == "dj_mon" && password == "password"
+        username == Rails.configuration.dj_mon.username &&
+        password == Rails.configuration.dj_mon.password
       end
     end
   end
