@@ -6,8 +6,8 @@ Gem::Specification.new do |s|
   s.description = "A Rails engine based frontend for Delayed Job"
   s.files = Dir["{app,lib,config}/**/*"] + ["MIT-LICENSE", "Rakefile", "Gemfile", "README.rdoc"]
 
-  s.add_dependency "rails", "~> 3.1.0"
-  s.add_dependency "delayed_job", ">= 3.0.0"
+  s.add_dependency "rails", "~> 3.1"
+  s.add_dependency "delayed_job", "~> 3.0"
   s.add_dependency "haml", "~> 3.1"
 
   s.add_dependency "jquery-rails", "~> 1.0"
