@@ -1,5 +1,5 @@
 module DjMon
-  class DelayedJobsController < DjMon::ApplicationController
+  class DelayedJobsController < ActionController::Base
     layout 'dj_mon'
 
     def index
