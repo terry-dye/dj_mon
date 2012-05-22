@@ -5,5 +5,11 @@
     = yield :head
 
   %body
+    %header
+      .navbar.navbar-fixed-top
+        .navbar-inner
+          .container
+            = link_to "DJ Mon", root_url, class: 'brand'
+
     .container
       = yield
