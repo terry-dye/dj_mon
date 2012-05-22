@@ -16,7 +16,6 @@ $(function(){
       else
         var output = "<div class='alert alert-info centered'>No Jobs</div>";
       tabContent.html(output);
-      console.log(tabContent);
     });
   })
 

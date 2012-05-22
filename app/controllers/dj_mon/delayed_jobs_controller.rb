@@ -2,6 +2,8 @@ module DjMon
   class DelayedJobsController < ActionController::Base
     respond_to :json
     layout 'dj_mon'
+    
+    before_filter :authenticate
 
     def index
       @delayed_jobs = []
@@ -22,5 +24,14 @@ module DjMon
     def queued
       respond_with Delayed::Job.where('delayed_jobs.failed_at IS NULL AND delayed_jobs.locked_by IS NULL')
     end
+
+    protected
+
+    def authenticate
+      authenticate_or_request_with_http_basic do |username, password|
+        username == "dj_mon" && password == "password"
+      end
+    end
   end
+
 end
