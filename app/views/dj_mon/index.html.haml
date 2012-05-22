@@ -1,0 +1,46 @@
+%h3
+  All Jobs(#{delayed_jobs.size})
+  <code>Queued</code>
+  <code>Active</code>
+  <code>Error - pending retry</code>
+  <code>Failed</code>
+  <code>Active</code>
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th
+        ID
+      %th
+        Priority
+      %th
+        Attempts
+      %th
+        Queue
+      %th
+        Last Error
+      %th
+        Failed at
+      %th
+        Run at
+      %th
+        Created at
+  %tbody
+    - @delayed_jobs.each do |job|
+      %tr
+        %td
+          = job.id
+        %td
+          = job.priority
+        %td
+          = job.attempts
+        %td
+          = job.queue || '&mdash;'.html_safe
+        %td
+          = job.last_error
+        %td
+          = job.failed_at
+        %td
+          = job.run_at
+        %td
+          = job.created_at

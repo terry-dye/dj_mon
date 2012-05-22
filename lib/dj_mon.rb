@@ -1,4 +1,4 @@
-module DJMon
-  class Engine < Rails::Engine
-  end
+require "dj_mon/engine"
+
+module DjMon
 end
