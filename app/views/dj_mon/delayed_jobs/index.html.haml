@@ -1,51 +1,59 @@
-%header#overview.jumbotron.subhead
-  %p.lead Delayed Jobs &mdash; #{@delayed_jobs.size}
+%header
+  %p.lead Delayed Jobs
   .subnav
-    %ul.nav.nav-pills
+    %ul.nav.nav-tabs
       %li.active
-        = link_to "All", "#"
+        = link_to "All", "#all", "data-toggle" => "tab"
       %li
-        = link_to "Failed", "#"
+        = link_to "Failed", "#failed", "data-toggle" => "tab"
       %li
-        = link_to "Active", "#"
+        = link_to "Queued", "#queued", "data-toggle" => "tab"
       %li
-        = link_to "Queued", "#"
+        = link_to "Active", "#active", "data-toggle" => "tab"
 
-%table.table.table-striped
-  %thead
-    %tr
-      %th
-        ID
-      %th
-        Priority
-      %th
-        Attempts
-      %th
-        Queue
-      %th
-        Last Error
-      %th
-        Failed at
-      %th
-        Run at
-      %th
-        Created at
-  %tbody
-    - @delayed_jobs.each do |job|
+    .tab-content
+      .tab-pane#all.active{ 'data-url'   => all_delayed_jobs_url }
+      .tab-pane#failed{ 'data-url'=> failed_delayed_jobs_url }
+      .tab-pane#active{ 'data-url'=> active_delayed_jobs_url }
+      .tab-pane#queued{ 'data-url'=> queued_delayed_jobs_url }
+
+%script#delayed_jobs_template{ :type=> "text/x-handlebars-template" }
+  %table.table.table-striped#delayed-jobs-table
+    %thead
+      %tr
+        %th
+          ID
+        %th
+          Priority
+        %th
+          Attempts
+        %th
+          Queue
+        %th
+          Last Error
+        %th.date
+          Failed at
+        %th.date
+          Run at
+        %th.date
+          Created at
+    %tbody
+      {{#.}}
       %tr
         %td
-          = job.id
+          {{id}}
         %td
-          = job.priority
+          {{priority}}
         %td
-          = job.attempts
+          {{attempts}}
         %td
-          = job.queue || '&mdash;'.html_safe
+          {{queue}}
         %td
-          = job.last_error
-        %td
-          = job.failed_at
-        %td
-          = job.run_at
-        %td
-          = job.created_at
+          {{last_error}}
+        %td.date
+          {{}} {{failed_at}}
+        %td.date
+          {{job.run_at}}
+        %td.date
+          {{created_at}}
+      {{/.}}

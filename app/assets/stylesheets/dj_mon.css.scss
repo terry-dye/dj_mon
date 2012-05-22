@@ -3,3 +3,19 @@
 body {
   padding: 90px;
 }
+
+table.table {
+  td, th {
+    text-align: center;
+  }
+  th.date, td.date {
+    text-align: left;
+  }
+  td.date {
+    font-size: 90%;
+  }
+}
+
+.centered {
+  text-align: center;
+}
