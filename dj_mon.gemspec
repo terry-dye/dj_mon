@@ -7,6 +7,7 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,lib,config}/**/*"] + ["MIT-LICENSE", "Rakefile", "Gemfile", "README.rdoc"]
   s.authors     = ["Akshay Rawat"]
   s.email       = ["projects@akshay.cc"]
+  s.homepage    = "http://github.com/akshayrawat/dj_mon"
 
   s.add_dependency "rails", "~> 3.1"
   s.add_dependency "haml", "~> 3.1"
