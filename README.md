@@ -34,6 +34,13 @@ This uses http basic auth for authentication. Set the credentials in an initiali
 If the credentials are not set, then the username and password are assumed to be the above mentioned.
   
 
+## ROADMAP
+  
+* Filter by queue.
+* Option to periodically auto refresh views.
+* `rake` tasks to know job status from command line.
+  
+
 ## Contributing
 
 1. Fork it
