@@ -4,7 +4,7 @@ Gem::Specification.new do |s|
   s.name = "dj_mon"
   s.summary = "A Frontend for Delayed Job."
   s.description = "A Rails engine based frontend for Delayed Job"
-  s.files = Dir["{app,lib,config}/**/*"] + ["MIT-LICENSE", "Rakefile", "Gemfile", "README.rdoc"]
+  s.files = Dir["{app,lib,config}/**/*"] + ["MIT-LICENSE", "Rakefile", "Gemfile", "README.md"]
   s.authors     = ["Akshay Rawat"]
   s.email       = ["projects@akshay.cc"]
   s.homepage    = "http://portfolio.akshay.cc/dj_mon/"
