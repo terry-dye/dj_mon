@@ -33,6 +33,7 @@ This uses http basic auth for authentication. Set the credentials in an initiali
     
 If the credentials are not set, then the username and password are assumed to be the above mentioned.
   
+Now visit `http://localhost:3000/dj_mon` and profit!
 
 ## ROADMAP
   
