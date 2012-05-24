@@ -9,34 +9,29 @@ module DjMon
     end
 
     def all
-      respond_with reports_for(Delayed::Job.all)
+      respond_with DjReport.all
     end
 
     def failed
-      respond_with reports_for(Delayed::Job.where('delayed_jobs.failed_at IS NOT NULL'))
+      respond_with DjReport.failed
     end
 
     def active
-      respond_with reports_for(Delayed::Job.where('delayed_jobs.locked_by IS NOT NULL'))
+      respond_with DjReport.active
     end
 
     def queued
-      respond_with reports_for(Delayed::Job.where('delayed_jobs.failed_at IS NULL AND delayed_jobs.locked_by IS NULL'))
+      respond_with DjReport.queued
     end
 
     protected
-    
+
     def authenticate
       authenticate_or_request_with_http_basic do |username, password|
         username == Rails.configuration.dj_mon.username &&
         password == Rails.configuration.dj_mon.password
       end
     end
-
-    def reports_for jobs
-      jobs.collect { |job| DjReport.new(job) }
-    end
-
   end
 
 end

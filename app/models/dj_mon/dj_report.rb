@@ -18,7 +18,31 @@ module DjMon
         created_at: l_date(delayed_job.created_at)
       }
     end
-    
+
+    class << self
+      def all
+        reports_for(Delayed::Job.all)
+      end
+
+      def failed
+        reports_for(Delayed::Job.where('delayed_jobs.failed_at IS NOT NULL'))
+      end
+
+      def active
+        reports_for(Delayed::Job.where('delayed_jobs.locked_by IS NOT NULL'))
+      end
+
+      def queued
+        reports_for(Delayed::Job.where('delayed_jobs.failed_at IS NULL AND delayed_jobs.locked_by IS NULL'))
+      end
+
+      def reports_for jobs
+        jobs.collect { |job| DjReport.new(job) }
+      end
+    end
+
+    private
+
     def l_date date
       date.present? ? I18n.l(date) : ""
     end
