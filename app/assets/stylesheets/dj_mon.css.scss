@@ -23,7 +23,9 @@ table.table {
 #dj-counts-view {
   position: relative;
   top: 10px;
+  width: 400px;
   .badge {
+    float: right;
     margin: 0 2px;
   }
 }
