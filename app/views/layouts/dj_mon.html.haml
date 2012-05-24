@@ -9,9 +9,20 @@
       .navbar.navbar-fixed-top
         .navbar-inner
           .container
-            = link_to "DJ Mon", dj_reports_url, class: "brand"
+            .pull-left
+              = link_to "DJ Mon", dj_reports_url, class: "brand"
+            .pull-right
+              #dj-counts-view
 
     .container
       = yield
 
     = javascript_include_tag "dj_mon.js"
+
+    %script#dj_counts_template{ :type=> "text/x-handlebars-template" }
+      %span.badge.badge-important
+        {{failed}} failed
+      %span.badge.badge-info
+        {{queued}} queued
+      %span.badge.badge-warning
+        {{active}} active

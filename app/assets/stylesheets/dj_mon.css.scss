@@ -19,3 +19,11 @@ table.table {
 .centered {
   text-align: center;
 }
+
+#dj-counts-view {
+  position: relative;
+  top: 10px;
+  .badge {
+    margin: 0 2px;
+  }
+}

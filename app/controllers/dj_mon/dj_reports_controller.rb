@@ -23,6 +23,10 @@ module DjMon
     def queued
       respond_with DjReport.queued
     end
+    
+    def dj_counts
+      respond_with DjReport.dj_counts
+    end
 
     protected
 

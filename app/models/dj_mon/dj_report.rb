@@ -35,6 +35,14 @@ module DjMon
       def queued
         reports_for(Delayed::Job.where('delayed_jobs.failed_at IS NULL AND delayed_jobs.locked_by IS NULL'))
       end
+      
+      def dj_counts
+        {
+          failed: 0,
+          active: 1,
+          queued: 2
+        }
+      end
 
       def reports_for jobs
         jobs.collect { |job| DjReport.new(job) }
