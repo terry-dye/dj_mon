@@ -1,6 +1,6 @@
 DjMon::Engine.routes.draw do
   
-  resources :delayed_jobs, :only=> [ :index ] do
+  resources :dj_reports, :only=> [ :index ] do
     collection do
       get :all
       get :failed
@@ -9,5 +9,5 @@ DjMon::Engine.routes.draw do
     end
   end
 
-  root :to => 'delayed_jobs#index', :as => :delayed_jobs
+  root :to => 'dj_reports#index'
 end

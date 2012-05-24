@@ -12,13 +12,13 @@
         = link_to "Active", "#active", "data-toggle" => "tab"
 
     .tab-content
-      .tab-pane#all.active{ 'data-url'   => all_delayed_jobs_url }
-      .tab-pane#failed{ 'data-url'=> failed_delayed_jobs_url }
-      .tab-pane#active{ 'data-url'=> active_delayed_jobs_url }
-      .tab-pane#queued{ 'data-url'=> queued_delayed_jobs_url }
+      .tab-pane#all.active{ 'data-url'   => all_dj_reports_url }
+      .tab-pane#failed{ 'data-url'=> failed_dj_reports_url }
+      .tab-pane#active{ 'data-url'=> active_dj_reports_url }
+      .tab-pane#queued{ 'data-url'=> queued_dj_reports_url }
 
-%script#delayed_jobs_template{ :type=> "text/x-handlebars-template" }
-  %table.table.table-striped#delayed-jobs-table
+%script#dj_reports_template{ :type=> "text/x-handlebars-template" }
+  %table.table.table-striped
     %thead
       %tr
         %th

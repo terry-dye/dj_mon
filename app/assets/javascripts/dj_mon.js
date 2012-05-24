@@ -10,7 +10,7 @@ $(function(){
     var dataUrl = tabContent.data('url');
 
     $.getJSON(dataUrl).success(function(data){
-      var template = $('#delayed_jobs_template').html();
+      var template = $('#dj_reports_template').html();
       if(data.length > 0)
         var output = Mustache.render(template, data);
       else
