@@ -17,6 +17,7 @@
     .container
       = yield
 
+    = javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"
     = javascript_include_tag "dj_mon.js"
 
     %script#dj_counts_template{ :type=> "text/x-handlebars-template" }

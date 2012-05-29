@@ -12,7 +12,5 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 3.1"
   s.add_dependency "haml", "~> 3.1"
 
-  s.add_dependency "jquery-rails", "~> 2.0"
-
   s.version = "0.0.2"
 end
