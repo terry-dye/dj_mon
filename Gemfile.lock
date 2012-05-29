@@ -1,8 +1,7 @@
 PATH
   remote: .
   specs:
-    dj_mon (0.0.1)
-      bootstrap-sass (~> 2.0.2)
+    dj_mon (0.0.2)
       haml (~> 3.1)
       jquery-rails (~> 2.0)
       rails (~> 3.1)
@@ -39,7 +38,6 @@ GEM
       i18n (~> 0.6)
       multi_json (~> 1.0)
     arel (3.0.2)
-    bootstrap-sass (2.0.3.1)
     builder (3.0.0)
     erubis (2.7.0)
     haml (3.1.6)
