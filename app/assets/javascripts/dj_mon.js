@@ -1,4 +1,4 @@
-//= require bootstrap-tab
+//= require dj_mon_bootstrap_tab
 //= require dj_mon_mustache
 
 $(function(){
