@@ -1,5 +1,5 @@
 //= require bootstrap-tab
-//= require mustache
+//= require dj_mon_mustache
 
 $(function(){
 
