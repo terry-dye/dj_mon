@@ -35,12 +35,15 @@ If the credentials are not set, then the username and password are assumed to be
   
 Now visit `http://localhost:3000/dj_mon` and profit!
 
+## Features
+* See Jobs by status
+* Inspect the payload
+* Inspect the last run error.
+
 ## ROADMAP
-* Inspect the payload of failed or queued jobs
 * Delete failed or queued jobs
 * Restart failed jobs
 * Filter by queue.
-* Option to periodically auto refresh views.
 * `rake` tasks to know job status from command line.
   
 

@@ -12,5 +12,5 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 3.1"
   s.add_dependency "haml", "~> 3.1"
 
-  s.version = "0.0.4"
+  s.version = "0.0.5"
 end
