@@ -1,4 +1,4 @@
-/*= require 'dj_mon_bootstrap' */
+/*= require 'dj_mon/bootstrap' */
 
 body {
   padding: 90px;
@@ -20,6 +20,10 @@ table.table td.date {
   text-align: center;
 }
 
+code.block {
+  display: block;
+  word-wrap: break-word;
+}
 #dj-counts-view {
   position: relative;
   top: 12px;

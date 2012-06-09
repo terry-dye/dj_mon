@@ -1,5 +1,8 @@
-//= require dj_mon_bootstrap_tab
-//= require dj_mon_mustache
+//= require dj_mon/bootstrap_tooltip
+//= require dj_mon/bootstrap_tab
+//= require dj_mon/bootstrap_popover
+//= require dj_mon/bootstrap_modal
+//= require dj_mon/mustache
 
 $(function(){
 
@@ -13,13 +16,27 @@ $(function(){
       if(data.length > 0)
         var output = Mustache.render(template, data);
       else
-        var output = "<div class='alert alert-info centered'>No Jobs</div>";
+        var output = "<div class='alert centered'>No Jobs</div>";
       tabContent.html(output);
     });
 
   })
 
   $('.nav.nav-tabs li.active a[data-toggle="tab"]').trigger('shown');
+
+  $('a[rel=popover]').live('mouseenter', function(){
+    $(this).popover('show');
+  });
+
+  $('a[rel=modal]').live('click', function(){
+    var template = $('#last_error_template').html();
+    var output = Mustache.render(template, { last_error: $(this).data('content') });
+    $(output).appendTo($('body')).show();
+  });
+
+  $('[data-dismiss="modal"]').live('click', function(){
+    $('.modal').hide().remove();
+  });
 
   (function refreshCount() {
     $.getJSON('/dj_mon/dj_reports/dj_counts/').success(function(data){
