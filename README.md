@@ -39,7 +39,7 @@ If the credentials are not set, then the username and password are assumed to be
 Now visit `http://localhost:3000/dj_mon` and profit!
 
 ## Demo
-* Source [DJ Mon](https://github.com/akshayrawat/dj_mon)
+* Source [DJ Mon](https://github.com/akshayrawat/dj_mon_demo)
 * URL:     [Demo](http://dj-mon-demo.herokuapp.com/)
 * Username: `dj_mon`
 * Password: `password`
