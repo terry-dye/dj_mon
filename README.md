@@ -16,6 +16,9 @@ Or install it yourself as:
 
     $ gem install dj_mon
 
+## Note
+Supports only `activerecord` for now.
+
 ## Usage
 
 If you are using Rails =< 3.1, or if `config.assets.initialize_on_precompile` is set to false, then add this to `config/environments/production.rb`.
@@ -32,7 +35,7 @@ This uses http basic auth for authentication. Set the credentials in an initiali
     YourApp::Application.config.dj_mon.password = "password"
     
 If the credentials are not set, then the username and password are assumed to be the above mentioned.
-  
+
 Now visit `http://localhost:3000/dj_mon` and profit!
 
 ## Features
