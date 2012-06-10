@@ -21,9 +21,9 @@
     = javascript_include_tag "dj_mon.js"
 
     %script#dj_counts_template{ :type=> "text/x-handlebars-template" }
-      %span.badge.badge-warning
-        {{active}} active
-      %span.badge.badge-info
+      %span.badge
         {{queued}} queued
-      %span.badge.badge-important
+      %span.badge.badge-info
+        {{active}} active
+      %span.badge.badge-warning
         {{failed}} failed

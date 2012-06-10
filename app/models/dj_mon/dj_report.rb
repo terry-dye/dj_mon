@@ -12,7 +12,7 @@ module DjMon
         payload: delayed_job.payload_object.object.to_yaml,
         priority: delayed_job.priority,
         attempts: delayed_job.attempts,
-        queue: delayed_job.queue,
+        queue: delayed_job.queue || "global",
         last_error_summary: delayed_job.last_error.to_s.truncate(30),
         last_error: delayed_job.last_error,
         failed_at: l_datetime(delayed_job.failed_at),

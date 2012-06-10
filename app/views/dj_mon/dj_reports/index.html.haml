@@ -22,13 +22,13 @@
     %thead
       %tr
         %th
+          Queue
+        %th
           ID
         %th
           Priority
         %th
           Attempts
-        %th
-          Queue
         %th
           Last Error
         %th.date
@@ -41,13 +41,14 @@
       {{#.}}
       %tr
         %td
+          .label.label-info
+            {{queue}}
+        %td
           <a href="#" data-content="<code class='block'>{{payload}}</code>" rel='popover' title='Payload'> {{id}} </a>
         %td
           {{priority}}
         %td
           {{attempts}}
-        %td
-          {{queue}}
         %td
           <a href="#" data-content="{{last_error}}" rel='modal' title='Last Error'> {{last_error_summary}} </a>
         %td.date
