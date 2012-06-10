@@ -32,7 +32,7 @@ module DjMon
       end
 
       def active
-        Delayed::Job.where('delayed_jobs.locked_by IS NOT NULL')
+        Delayed::Job.where('delayed_jobs.failed_at IS NULL AND delayed_jobs.locked_by IS NOT NULL')
       end
 
       def queued
