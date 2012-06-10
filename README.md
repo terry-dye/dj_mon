@@ -3,7 +3,7 @@
 A Rails engine based frontend for Delayed Job.
 
 ## Demo
-* Source [DJ Mon](https://github.com/akshayrawat/dj_mon_demo)
+* Source [DJ Mon Demo](https://github.com/akshayrawat/dj_mon_demo)
 * URL:     [Demo](http://dj-mon-demo.herokuapp.com/)
 * Username: `dj_mon`
 * Password: `password`
