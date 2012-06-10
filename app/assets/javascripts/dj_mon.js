@@ -29,8 +29,8 @@ $(function(){
   });
 
   $('a[rel=modal]').live('click', function(){
-    var template = $('#last_error_template').html();
-    var output = Mustache.render(template, { last_error: $(this).data('content') });
+    var template = $($(this).attr('href')).html();
+    var output = Mustache.render(template, { content: $(this).data('content') });
     $(output).appendTo($('body')).show();
   });
 

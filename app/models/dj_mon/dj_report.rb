@@ -1,7 +1,8 @@
 module DjMon
   class DjReport
+
     attr_accessor :delayed_job
-    
+
     def initialize delayed_job
       self.delayed_job = delayed_job
     end
@@ -67,12 +68,22 @@ module DjMon
         }
       end
 
+      def settings
+        {
+          destroy_failed_jobs: Delayed::Worker.destroy_failed_jobs,
+          sleep_delay:         Delayed::Worker.sleep_delay,
+          max_attempts:        Delayed::Worker.max_attempts,
+          max_run_time:        Delayed::Worker.max_run_time,
+          read_ahead:          Delayed::Worker.read_ahead,
+          delay_jobs:          Delayed::Worker.delay_jobs
+        }
+      end
     end
 
     private
-
     def l_datetime date
       date.present? ? I18n.l(date) : ""
     end
   end
+
 end

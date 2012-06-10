@@ -4,15 +4,15 @@ body {
   padding: 90px;
 }
 
-table.table td, table.table th {
+table#jobs-table td, table#jobs-table th {
   text-align: center;
 }
 
-table.table td.date, table.table th.date {
+table#jobs-table td.date, table#jobs-table th.date {
   text-align: left;
 }
 
-table.table td.date {
+table#jobs-table td.date {
   font-size: 80%;
 }
 
@@ -24,6 +24,7 @@ code.block {
   display: block;
   word-wrap: break-word;
 }
+
 #dj-counts-view {
   position: relative;
   top: 12px;

@@ -27,6 +27,10 @@ module DjMon
     def dj_counts
       respond_with DjReport.dj_counts
     end
+    
+    def settings
+      respond_with DjReport.settings
+    end
 
     protected
 
