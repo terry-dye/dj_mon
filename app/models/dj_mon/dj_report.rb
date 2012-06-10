@@ -15,9 +15,9 @@ module DjMon
         queue: delayed_job.queue,
         last_error_summary: delayed_job.last_error.to_s.truncate(30),
         last_error: delayed_job.last_error,
-        failed_at: l_date(delayed_job.failed_at),
-        run_at: l_date(delayed_job.run_at),
-        created_at: l_date(delayed_job.created_at)
+        failed_at: l_datetime(delayed_job.failed_at),
+        run_at: l_datetime(delayed_job.run_at),
+        created_at: l_datetime(delayed_job.created_at)
       }
     end
 
@@ -71,7 +71,7 @@ module DjMon
 
     private
 
-    def l_date date
+    def l_datetime date
       date.present? ? I18n.l(date) : ""
     end
   end
