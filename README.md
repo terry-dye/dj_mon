@@ -38,10 +38,12 @@ If the credentials are not set, then the username and password are assumed to be
 
 Now visit `http://localhost:3000/dj_mon` and profit!
 
-## Features
-* See Jobs by status
-* Inspect the payload
-* Inspect the last run error.
+## Demo
+* Source [DJ Mon](https://github.com/akshayrawat/dj_mon)
+* URL:     [Demo](http://dj-mon-demo.herokuapp.com/)
+* Username: `dj_mon`
+* Password: `password`
+
 
 ## ROADMAP
 * Delete failed or queued jobs
