@@ -18,7 +18,8 @@ module DjMon
         last_error: delayed_job.last_error,
         failed_at: l_datetime(delayed_job.failed_at),
         run_at: l_datetime(delayed_job.run_at),
-        created_at: l_datetime(delayed_job.created_at)
+        created_at: l_datetime(delayed_job.created_at),
+        failed: delayed_job.failed_at.present?
       }
     end
 

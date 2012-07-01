@@ -30,11 +30,12 @@
         %th
           Last Error
         %th.date
-          Failed at
-        %th.date
           Run at
         %th.date
           Created at
+        %th.date
+          Failed at
+
     %tbody
       {{#.}}
       %tr
@@ -50,11 +51,21 @@
         %td
           <a href="#last_error_template" data-content="{{last_error}}" rel='modal' title='Last Error'> {{last_error_summary}} </a>
         %td.date
-          {{failed_at}}
-        %td.date
           {{run_at}}
         %td.date
           {{created_at}}
+        %td.date
+          {{#failed}}
+          {{failed_at}}
+          
+          = form_tag '/dj_mon/dj_reports/{{id}}/retry', method: :post, class: 'form-inline' do
+            = submit_tag 'Retry', class: 'btn btn-info btn-mini'
+
+          = form_tag '/dj_mon/dj_reports/{{id}}', method: :delete, class: 'form-inline' do
+            = submit_tag 'Delete', class: 'btn btn-danger btn-mini'
+
+          {{/failed}}
+
       {{/.}}
 
 %script#last_error_template{ :type=> "text/x-handlebars-template" }

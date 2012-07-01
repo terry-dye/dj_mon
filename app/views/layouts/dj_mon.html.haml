@@ -16,6 +16,11 @@
 
             .pull-right
               #dj-counts-view
+    
+    .container
+      - if flash[:notice]
+        .alert.alert-success
+          = flash[:notice]
 
     .container
       = yield

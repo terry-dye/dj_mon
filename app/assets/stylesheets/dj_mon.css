@@ -35,3 +35,7 @@ code.block {
   float: right;
   margin: 0 2px;
 }
+
+form.form-inline {
+  display: inline;
+}

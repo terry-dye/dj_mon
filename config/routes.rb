@@ -1,6 +1,6 @@
 DjMon::Engine.routes.draw do
   
-  resources :dj_reports, :only=> [ :index ] do
+  resources :dj_reports do
     collection do
       get :all
       get :failed
@@ -8,6 +8,9 @@ DjMon::Engine.routes.draw do
       get :queued
       get :dj_counts
       get :settings
+    end
+    member do
+      post :retry
     end
   end
 
