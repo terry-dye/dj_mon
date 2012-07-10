@@ -45,16 +45,3 @@ If the credentials are not set, then the username and password are assumed to be
 
 Now visit `http://localhost:3000/dj_mon` and profit!
   
-## Demo
-* Source [DJ Mon](https://github.com/akshayrawat/dj_mon)
-* URL:     [Demo](http://dj-mon-demo.herokuapp.com/)
-* Username: `dj_mon`
-* Password: `password`  
-
-## Contributing
-
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Added some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
