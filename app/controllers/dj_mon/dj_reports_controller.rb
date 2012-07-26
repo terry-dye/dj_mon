@@ -55,7 +55,7 @@ module DjMon
     end
     
     def set_api_version
-      request.headers['dj_mon_version'] = '0.1.1'
+      response.headers['DJ-Mon-Version'] = '0.1.1'
     end
 
   end
