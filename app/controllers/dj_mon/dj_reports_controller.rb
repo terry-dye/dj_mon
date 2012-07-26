@@ -4,6 +4,7 @@ module DjMon
     layout 'dj_mon'
     
     before_filter :authenticate
+    after_filter :set_api_version
 
     def index
     end
@@ -52,6 +53,11 @@ module DjMon
         password == Rails.configuration.dj_mon.password
       end
     end
+    
+    def set_api_version
+      request.headers['dj_mon_version'] = '0.1.1'
+    end
+
   end
 
 end
