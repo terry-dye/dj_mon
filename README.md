@@ -2,13 +2,6 @@
 
 A Rails engine based frontend for Delayed Job.
 
-## Demo
-* [Demo URL](http://dj-mon-demo.herokuapp.com/)
-* Username: `dj_mon`
-* Password: `password`
-* [Demo Source](https://github.com/akshayrawat/dj_mon_demo)
-
-
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -24,6 +17,7 @@ Or install it yourself as:
     $ gem install dj_mon
 
 ## Note
+
 Supports only `activerecord` for now.
 
 ## Usage
@@ -45,3 +39,12 @@ If the credentials are not set, then the username and password are assumed to be
 
 Now visit `http://localhost:3000/dj_mon` and profit!
   
+
+## Demo
+
+* [Demo URL](http://dj-mon-demo.herokuapp.com/)
+* Username: `dj_mon`
+* Password: `password`
+* [Demo Source](https://github.com/akshayrawat/dj_mon_demo)
+
+![Screenshot](https://github.com/akshayrawat/dj_mon_demo/raw/master/docs/screenshot.jpg)
