@@ -82,8 +82,8 @@ module DjMon
     end
 
     private
-    def l_datetime date
-      date.present? ? I18n.l(date) : ""
+    def l_datetime time
+      time.present? ? time.strftime("%b %d %H:%M:%S") : ""
     end
   end
 
