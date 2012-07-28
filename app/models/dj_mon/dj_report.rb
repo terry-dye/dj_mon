@@ -76,7 +76,9 @@ module DjMon
           max_attempts:        Delayed::Worker.max_attempts,
           max_run_time:        Delayed::Worker.max_run_time,
           read_ahead:          Delayed::Worker.read_ahead,
-          delay_jobs:          Delayed::Worker.delay_jobs
+          delay_jobs:          Delayed::Worker.delay_jobs,
+          delayed_job_version: Gem.loaded_specs["delayed_job"].version.version,
+          dj_mon_version:      DjMon::VERSION
         }
       end
     end

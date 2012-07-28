@@ -42,37 +42,47 @@
           %button{ type: "button", class: "close", 'data-dismiss' => "modal" }
             ×
           %h3
-            Delayed Job Settings
+            Settings
         .modal-body
           %table.table.table-bordered.table-striped
             %tr
               %td
-                Destroy failed jobs:
+                Delayed Job version
+              %td
+                <code>{{content.delayed_job_version}}</code>
+            %tr
+              %td
+                DJ Mon version
+              %td
+                <code>{{content.dj_mon_version}}</code>
+            %tr
+              %td
+                Destroy failed jobs
               %td
                 <code>{{content.destroy_failed_jobs}}</code>
             %tr
               %td
-                Sleep delay: 
+                Sleep delay
               %td
                 <code>{{content.sleep_delay}}</code> seconds
             %tr
               %td
-                Max attempts:
+                Max attempts
               %td
                 <code>{{content.max_attempts}}</code>
             %tr
               %td
-                Max run time:
+                Max run time
               %td
                 <code>{{content.max_run_time}}</code> seconds
             %tr
               %td
-                Read ahead:
+                Read ahead
               %td
                 <code>{{content.read_ahead}}</code>
             %tr
               %td
-                Delay Jobs:
+                Delay Jobs
               %td
                 <code>{{content.delay_jobs}}</code>
 

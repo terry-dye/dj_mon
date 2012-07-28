@@ -36,7 +36,7 @@ module DjMon
     def retry
       dj = Delayed::Job.find(params[:id])
       dj.update_attribute :failed_at, nil if dj
-      redirect_to root_url, notice: "The job was been queued for a re-run" and return
+      redirect_to root_url, notice: "The job has been queued for a re-run" and return
     end
   
     def destroy
@@ -55,7 +55,7 @@ module DjMon
     end
     
     def set_api_version
-      response.headers['DJ-Mon-Version'] = '0.1.1'
+      response.headers['DJ-Mon-Version'] = DjMon::VERSION
     end
 
   end

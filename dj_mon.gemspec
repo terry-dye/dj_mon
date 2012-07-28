@@ -1,16 +1,17 @@
-# Provide a simple gemspec so you can easily use your enginex
-# project in your rails apps through git.
+$:.push File.expand_path("../lib", __FILE__)
+require 'dj_mon/version'
+
 Gem::Specification.new do |s|
-  s.name = "dj_mon"
-  s.summary = "A Frontend for Delayed Job."
-  s.description = "A Rails engine based frontend for Delayed Job"
-  s.files = Dir["{app,lib,config}/**/*"] + ["MIT-LICENSE", "Rakefile", "Gemfile", "README.md"]
-  s.authors     = ["Akshay Rawat"]
-  s.email       = ["projects@akshay.cc"]
-  s.homepage    = "http://portfolio.akshay.cc/dj_mon/"
+  s.name            = "dj_mon"
+  s.version         = DjMon::VERSION.dup
+  s.platform        = Gem::Platform::RUBY
+  s.summary         = "A Frontend for Delayed Job."
+  s.description     = "A Rails engine based frontend for Delayed Job"
+  s.files           = Dir["{app,lib,config}/**/*"] + ["MIT-LICENSE", "Rakefile", "Gemfile", "README.md"]
+  s.authors         = ["Akshay Rawat"]
+  s.email           = ["projects@akshay.cc"]
+  s.homepage        = "https://github.com/akshayrawat/dj_mon"
 
   s.add_dependency "rails", "~> 3.1"
   s.add_dependency "haml", "~> 3.1"
-
-  s.version = "0.1.1"
 end
