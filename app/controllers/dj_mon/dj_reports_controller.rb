@@ -2,7 +2,7 @@ module DjMon
   class DjReportsController < ActionController::Base
     respond_to :json
     layout 'dj_mon'
-    
+
     before_filter :authenticate, :if => lambda { DjMon::Engine.config.dj_mon.use_authenticate }
     after_filter :set_api_version
 
@@ -24,25 +24,25 @@ module DjMon
     def queued
       respond_with DjReport.queued_reports
     end
-    
+
     def dj_counts
       respond_with DjReport.dj_counts
     end
-    
+
     def settings
       respond_with DjReport.settings
     end
-    
+
     def retry
       DjMon::Backend.retry params[:id]
       redirect_to root_url, notice: "The job has been queued for a re-run" and return
     end
-  
+
     def destroy
       DjMon::Backend.destroy params[:id]
       redirect_to root_url, notice: "The job was deleted" and return
     end
-  
+
     protected
 
     def authenticate
@@ -51,7 +51,7 @@ module DjMon
         password == Rails.configuration.dj_mon.password
       end
     end
-    
+
     def set_api_version
       response.headers['DJ-Mon-Version'] = DjMon::VERSION
     end
