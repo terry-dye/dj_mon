@@ -31,14 +31,14 @@
       var dj_counts_dj_reports_url = "#{dj_counts_dj_reports_url}"
 
     %script#dj_counts_template{ :type=> "text/x-handlebars-template" }
-      %span.badge
-        {{all}} all
-      %span.badge.badge-important
+      %span.badge.badge-warning
+        {{failed}} failed
+      %span.badge.badge-info
         {{queued}} queued
       %span.badge.badge-info
         {{active}} active
-      %span.badge.badge-warning
-        {{failed}} failed
+      %span.badge
+        {{all}} all
 
     %script#dj_settings_template{ :type=> "text/x-handlebars-template" }
       .modal.hide
