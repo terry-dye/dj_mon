@@ -118,9 +118,9 @@ class ApiTest < ActionDispatch::IntegrationTest
       authorized_get '/dj_mon/dj_reports/all', format: 'json'
 
       assert_equal 3, json_response.size
-      assert_job({failed: true,  priority: 1, attempts: 1, queue: 'queue_mailer_1'}, json_response[0])
-      assert_job({failed: false, priority: 2, attempts: 0, queue: 'queue_mailer_2'}, json_response[1])
-      assert_job({failed: false, priority: 3, attempts: 0, queue: 'queue_mailer_3'}, json_response[2])
+      assert_job_in_queue('queue_mailer_1', { failed: true,  priority: 1, attempts: 1, queue: 'queue_mailer_1' })
+      assert_job_in_queue('queue_mailer_2', { failed: false, priority: 2, attempts: 0, queue: 'queue_mailer_2' })
+      assert_job_in_queue('queue_mailer_3', { failed: false, priority: 3, attempts: 0, queue: 'queue_mailer_3' })
     end
   end
 
@@ -194,6 +194,12 @@ class ApiTest < ActionDispatch::IntegrationTest
     end
     assert_not_nil DateTime.strptime(actual['created_at'], DjMon::DjReport::TIME_FORMAT)
     assert_not_nil DateTime.strptime(actual['run_at'], DjMon::DjReport::TIME_FORMAT)
+  end
+
+  def assert_job_in_queue queue, expected
+    job = json_response.find{|j| j['queue'] == queue}
+    assert_not_nil job
+    assert_job expected, job
   end
 
   def json_response

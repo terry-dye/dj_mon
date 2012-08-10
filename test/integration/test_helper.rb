@@ -3,7 +3,7 @@ require 'shoulda'
 
 require "config/environment.rb"
 
-puts "Running #{Delayed::Worker.backend}"
+puts "Running tests for #{Delayed::Worker.backend}"
 
 require "rails/test_help"
 require_relative '../support/test_job'
