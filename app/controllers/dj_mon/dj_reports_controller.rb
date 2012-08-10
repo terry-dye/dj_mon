@@ -3,7 +3,7 @@ module DjMon
     respond_to :json, :html
     layout 'dj_mon'
 
-    before_filter :authenticate, :if => lambda { DjMon::Engine.config.dj_mon.use_authenticate }
+    before_filter :authenticate
     after_filter :set_api_version
 
     def index
