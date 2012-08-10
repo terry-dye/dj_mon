@@ -15,20 +15,22 @@ namespace :test do
 
   desc "Run all tests for the ActiveRecord backend"
   Rake::TestTask.new(:active_record) do |t|
-    t.libs << 'lib'
-    t.libs << 'test'
-    t.pattern = 'test/integration/active_record/*_test.rb'
-    t.verbose = false
+    t.pattern = 'test/**/*_test.rb'
+    t.libs = [ "test/dummy_active_record" ]
   end
 
   desc "Run all tests for the Mongoid backend"
   Rake::TestTask.new(:mongoid) do |t|
-    t.libs << 'lib'
-    t.libs << 'test'
-    t.pattern = 'test/integration/mongoid/*_test.rb'
-    t.verbose = false
+    t.pattern = 'test/**/*_test.rb'
+    t.libs = [ "test/dummy_mongoid" ]
   end
+
+  desc "Runs all tests"
+  task "all"=> [ :active_record, :mongoid ]
+
 end
+
+task default: 'test:all'
 
 Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
