@@ -48,3 +48,14 @@ Now visit `http://localhost:3000/dj_mon` and profit!
 * [Demo Source](https://github.com/akshayrawat/dj_mon_demo)
 
 ![Screenshot](https://github.com/akshayrawat/dj_mon_demo/raw/master/docs/screenshot.jpg)
+
+
+## Running the test suite
+
+To run the test suite, execute the following commands on the project
+root:
+
+    gem install bundler
+    bundle install
+    rake prepare
+    rake test

@@ -1,5 +1,5 @@
 DjMon::Engine.routes.draw do
-  
+
   resources :dj_reports do
     collection do
       get :all

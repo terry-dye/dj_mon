@@ -7,7 +7,7 @@ rescue LoadError
 end
 
 require 'rake'
-require 'rake/rdoctask'
+require 'rdoc/task'
 
 require 'rake/testtask'
 
@@ -26,4 +26,12 @@ Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.options << '--line-numbers' << '--inline-source'
   rdoc.rdoc_files.include('README.rdoc')
   rdoc.rdoc_files.include('lib/**/*.rb')
+end
+
+desc "Prepare environment for tests"
+task :prepare do
+  FileUtils.cd File.expand_path("../test/dummy_active_record", __FILE__)
+  system("rake db:create:all")
+  system("rake db:migrate")
+  system("rake db:test:clone")
 end

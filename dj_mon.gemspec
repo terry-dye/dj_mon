@@ -14,4 +14,8 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", "~> 3.1"
   s.add_dependency "haml", "~> 3.1"
+
+  s.add_development_dependency 'delayed_job_active_record'
+  s.add_development_dependency 'sqlite3'
+  s.add_development_dependency 'shoulda'
 end

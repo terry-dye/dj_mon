@@ -1,5 +1,6 @@
 .bundle/
 .sass-cache/
-log/*.log
+*.log
 pkg/
 *.DS_Store
+*.sqlite3

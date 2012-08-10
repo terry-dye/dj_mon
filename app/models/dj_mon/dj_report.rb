@@ -1,5 +1,6 @@
 module DjMon
   class DjReport
+    TIME_FORMAT = "%b %d %H:%M:%S"
 
     attr_accessor :delayed_job
 
@@ -10,7 +11,7 @@ module DjMon
     def as_json(options={})
       { 
         id: delayed_job.id,
-        payload: delayed_job.payload_object.object.to_yaml,
+        payload: payload(delayed_job),
         priority: delayed_job.priority,
         attempts: delayed_job.attempts,
         queue: delayed_job.queue || "global",
@@ -21,6 +22,10 @@ module DjMon
         created_at: l_datetime(delayed_job.created_at),
         failed: delayed_job.failed_at.present?
       }
+    end
+
+    def payload job
+      job.payload_object.respond_to?(:object) ? job.payload_object.object.to_yaml : job.payload_object.to_yaml
     end
 
     class << self
@@ -69,7 +74,7 @@ module DjMon
 
     private
     def l_datetime time
-      time.present? ? time.strftime("%b %d %H:%M:%S") : ""
+      time.present? ? time.strftime(TIME_FORMAT) : ""
     end
   end
 
