@@ -35,9 +35,10 @@ class ApiTest < ActionDispatch::IntegrationTest
     end
   end
 
-  context "/dj_counts" do
+  context "GET /dj_counts" do
     setup do
-      5.times { Delayed::Job.enqueue(FailingTestJob.new) }
+      Delayed::Job.enqueue(TestJob.new).lock_exclusively!(30, 'some worker')
+      2.times { Delayed::Job.enqueue(FailingTestJob.new) }
       Delayed::Worker.new.work_off
       3.times { Delayed::Job.enqueue(TestJob.new) }
     end
@@ -46,11 +47,11 @@ class ApiTest < ActionDispatch::IntegrationTest
       authorized_get '/dj_mon/dj_reports/dj_counts', format: 'json'
 
       assert_equal 200, status
-      assert_equal({ all: 8, active: 0, failed: 5, queued: 3 }, json_response.symbolize_keys)
+      assert_equal({ all: 6, active: 1, failed: 2, queued: 3 }, json_response.symbolize_keys)
     end
   end
 
-  context "/settings" do
+  context "GET /settings" do
     should "return delayed job settings" do
       authorized_get '/dj_mon/dj_reports/settings', format: 'json'
 
@@ -68,7 +69,7 @@ class ApiTest < ActionDispatch::IntegrationTest
     end
   end
 
-  context "/failed" do
+  context "GET /failed" do
     setup do
       2.times { Delayed::Job.enqueue(FailingTestJob.new, queue: "queue_mailer_1", priority: 3) }
       Delayed::Worker.new.work_off
@@ -82,7 +83,7 @@ class ApiTest < ActionDispatch::IntegrationTest
     end
   end
 
-  context "/queued" do
+  context "GET /queued" do
     setup do
       3.times { Delayed::Job.enqueue(TestJob.new, priority: 2, queue: 'queue_mailer_2') }
     end
@@ -95,7 +96,7 @@ class ApiTest < ActionDispatch::IntegrationTest
     end
   end
 
-  context "/active" do
+  context "GET /active" do
     setup do
       2.times do
         job = Delayed::Job.enqueue(TestJob.new, priority: 2, queue: 'queue_mailer_3')
@@ -111,7 +112,7 @@ class ApiTest < ActionDispatch::IntegrationTest
     end
   end
 
-  context "/all" do
+  context "GET /all" do
     setup do
       Delayed::Job.enqueue(FailingTestJob.new, priority: 1, queue: 'queue_mailer_1')
       Delayed::Worker.new.work_off
