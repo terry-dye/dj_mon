@@ -1,3 +1,9 @@
 language: ruby
 rvm:
   - 1.9.3
+only:
+  - master
+notifications:
+  disabled: true
+before_script:
+  - rake test:prepare

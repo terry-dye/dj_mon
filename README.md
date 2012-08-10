@@ -57,5 +57,5 @@ root:
 
     gem install bundler
     bundle install
-    rake prepare
-    rake test
+    rake test:prepare
+    rake

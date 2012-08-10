@@ -28,6 +28,14 @@ namespace :test do
   desc "Runs all tests"
   task "all"=> [ :active_record, :mongoid ]
 
+  desc "Prepare environment for tests"
+  task :prepare do
+    FileUtils.cd File.expand_path("../test/dummy_active_record", __FILE__)
+    system("rake db:create:all")
+    system("rake db:migrate")
+    system("rake db:test:clone")
+  end
+
 end
 
 task default: 'test:all'
@@ -40,10 +48,3 @@ Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
 
-desc "Prepare environment for tests"
-task :prepare do
-  FileUtils.cd File.expand_path("../test/dummy_active_record", __FILE__)
-  system("rake db:create:all")
-  system("rake db:migrate")
-  system("rake db:test:clone")
-end
