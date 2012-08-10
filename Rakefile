@@ -11,14 +11,24 @@ require 'rdoc/task'
 
 require 'rake/testtask'
 
-Rake::TestTask.new(:test) do |t|
-  t.libs << 'lib'
-  t.libs << 'test'
-  t.pattern = 'test/**/*_test.rb'
-  t.verbose = false
-end
+namespace :test do
 
-task :default => :test
+  desc "Run all tests for the ActiveRecord backend"
+  Rake::TestTask.new(:active_record) do |t|
+    t.libs << 'lib'
+    t.libs << 'test'
+    t.pattern = 'test/integration/active_record/*_test.rb'
+    t.verbose = false
+  end
+
+  desc "Run all tests for the Mongoid backend"
+  Rake::TestTask.new(:mongoid) do |t|
+    t.libs << 'lib'
+    t.libs << 'test'
+    t.pattern = 'test/integration/mongoid/*_test.rb'
+    t.verbose = false
+  end
+end
 
 Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
