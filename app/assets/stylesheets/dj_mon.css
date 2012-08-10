@@ -4,6 +4,15 @@ body {
   padding: 90px;
 }
 
+.container {
+  width: 980px;
+}
+
+.navbar .btn#settings {
+  margin: 8px 5px 5px;
+  padding: 1px 10px 1px;
+}
+
 table#jobs-table td, table#jobs-table th {
   text-align: center;
 }
