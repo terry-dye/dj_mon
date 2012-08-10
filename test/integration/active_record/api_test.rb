@@ -130,6 +130,28 @@ class ApiTest < ActionDispatch::IntegrationTest
     end
   end
 
+  context "DELETE /:id" do
+    should "delete the job specified by the :id" do
+      job = Delayed::Job.enqueue(TestJob.new)
+      authorized_delete "/dj_mon/dj_reports/#{job.id}", format: 'json'
+
+      assert !Delayed::Job.exists?(job.id)
+      assert response.body.strip.empty?
+    end
+  end
+
+  context "POST /retry/:id" do
+    should "reset failed_at column so that delayed job retries it" do
+      job = Delayed::Job.enqueue(FailingTestJob.new)
+      Delayed::Worker.new.work_off
+
+      authorized_post "/dj_mon/dj_reports/#{job.id}/retry", format: 'json'
+
+      assert_nil job.reload.failed_at
+      assert response.body.strip.empty?
+    end
+  end
+
   private
 
   def assert_job(expected, actual)
@@ -165,8 +187,16 @@ class ApiTest < ActionDispatch::IntegrationTest
     get url, params, { 'HTTP_AUTHORIZATION'=> ActionController::HttpAuthentication::Basic.encode_credentials('dj_mon', 'gibber') }
   end
 
+  def authorized_post(url, params)
+    post url, params, { 'HTTP_AUTHORIZATION'=> ActionController::HttpAuthentication::Basic.encode_credentials('dj_mon', 'password') }
+  end
+
   def unauthorized_post(url, params)
     post url, params, { 'HTTP_AUTHORIZATION'=> ActionController::HttpAuthentication::Basic.encode_credentials('dj_mon', 'gibber') }
+  end
+
+  def authorized_delete(url, params)
+    delete url, params, { 'HTTP_AUTHORIZATION'=> ActionController::HttpAuthentication::Basic.encode_credentials('dj_mon', 'password') }
   end
 
   def unauthorized_delete(url, params)

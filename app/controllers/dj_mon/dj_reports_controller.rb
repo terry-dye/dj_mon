@@ -1,6 +1,6 @@
 module DjMon
   class DjReportsController < ActionController::Base
-    respond_to :json
+    respond_to :json, :html
     layout 'dj_mon'
 
     before_filter :authenticate, :if => lambda { DjMon::Engine.config.dj_mon.use_authenticate }
@@ -35,12 +35,18 @@ module DjMon
 
     def retry
       DjMon::Backend.retry params[:id]
-      redirect_to root_url, notice: "The job has been queued for a re-run" and return
+      respond_to do |format|
+        format.html { redirect_to root_url, notice: "The job has been queued for a re-run" and return }
+        format.json { head(:ok) }
+      end
     end
 
     def destroy
       DjMon::Backend.destroy params[:id]
-      redirect_to root_url, notice: "The job was deleted" and return
+      respond_to do |format|
+        format.html { redirect_to root_url, notice: "The job was deleted" and return }
+        format.json { head(:ok) }
+      end
     end
 
     protected
