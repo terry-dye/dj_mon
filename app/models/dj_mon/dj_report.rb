@@ -1,3 +1,5 @@
+require 'dj_mon/version'
+
 module DjMon
   class DjReport
     TIME_FORMAT = "%b %d %H:%M:%S"
