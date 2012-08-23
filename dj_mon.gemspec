@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.summary         = "A Frontend for Delayed Job."
   s.description     = "A Rails engine based frontend for Delayed Job"
   s.files           = Dir["{app,lib,config}/**/*"] + ["MIT-LICENSE", "Rakefile", "Gemfile", "README.md"]
-  s.authors         = ["Akshay Rawat"]
+  s.authors         = ["Akshay Rawat", "Timo Schilling"]
   s.email           = ["projects@akshay.cc"]
   s.homepage        = "https://github.com/akshayrawat/dj_mon"
 

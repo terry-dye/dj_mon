@@ -1,6 +1,6 @@
 # DJ Mon [![Build Status](https://secure.travis-ci.org/akshayrawat/dj_mon.png?branch=master)](http://travis-ci.org/akshayrawat/dj_mon)
 
-A Rails engine based frontend for Delayed Job.
+A Rails engine based frontend for Delayed Job. It also has an [iPhone app](http://itunes.apple.com/app/dj-mon/id552732872).
 
 ## Installation
 
@@ -18,7 +18,7 @@ Or install it yourself as:
 
 ## Note
 
-Supports only `activerecord` and `mongoid` for now.
+Supports `activerecord` and `mongoid`.
 
 ## Usage
 
@@ -47,10 +47,15 @@ Now visit `http://localhost:3000/dj_mon` and profit!
 * Password: `password`
 * [Demo Source](https://github.com/akshayrawat/dj_mon_demo)
 
+## iPhone App
+* The iPhone app is written in RubyMotion. [Source](https://github.com/akshayrawat/dj_mon_iphone).
+* [On App Store](http://itunes.apple.com/app/dj-mon/id552732872)
+
 ![Screenshot](https://github.com/akshayrawat/dj_mon_demo/raw/master/docs/screenshot.jpg)
 
 
-## Running the test suite
+## Contributing
+### Running the test suite
 
 To run the test suite, execute the following commands on the project
 root:
