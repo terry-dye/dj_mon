@@ -2,6 +2,13 @@
 
 A Rails engine based frontend for Delayed Job. It also has an [iPhone app](http://itunes.apple.com/app/dj-mon/id552732872).
 
+## Demo
+* [A quick video tour](http://www.akshay.cc/dj_mon/)
+* [Sandbox Demo URL](http://dj-mon-demo.herokuapp.com/)
+* Username: `dj_mon`
+* Password: `password`
+* [Demo Source](https://github.com/akshayrawat/dj_mon_demo)
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -38,29 +45,24 @@ This uses http basic auth for authentication. Set the credentials in an initiali
 If the credentials are not set, then the username and password are assumed to be the above mentioned.
 
 Now visit `http://localhost:3000/dj_mon` and profit!
-  
-
-## Demo
-
-* [Demo URL](http://dj-mon-demo.herokuapp.com/)
-* Username: `dj_mon`
-* Password: `password`
-* [Demo Source](https://github.com/akshayrawat/dj_mon_demo)
 
 ## iPhone App
 * The iPhone app is written in RubyMotion. [Source](https://github.com/akshayrawat/dj_mon_iphone).
 * [On App Store](http://itunes.apple.com/app/dj-mon/id552732872)
 
-![Screenshot](https://github.com/akshayrawat/dj_mon_demo/raw/master/docs/screenshot.jpg)
-
-
 ## Contributing
+
+### Things to do
+* Mostly in the iPhone app. Mentioned in the [README](https://github.com/akshayrawat/dj_mon_iphone).
+
 ### Running the test suite
 
-To run the test suite, execute the following commands on the project
+To run the test suite, execute the following commands from the project
 root:
 
     gem install bundler
     bundle install
     rake test:prepare
     rake
+
+![Screenshot](https://github.com/akshayrawat/dj_mon_demo/raw/master/docs/screenshot.jpg)
