@@ -15,7 +15,7 @@ module DjMon
         end
       end
 
-      delegate *BACKEND_METHODS, :to => :used_backend
+      delegate *BACKEND_METHODS, {:to => :used_backend}
     end
   end
 end
