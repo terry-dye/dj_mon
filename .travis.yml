@@ -2,8 +2,9 @@ language: ruby
 rvm:
   - 1.9.3
   - 1.8.7
-only:
-  - master
+branches:
+  only:
+    - master
 notifications:
   disabled: true
 before_script:
