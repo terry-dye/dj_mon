@@ -31,7 +31,7 @@ Supports `activerecord` and `mongoid`.
 
 If you are using Rails =< 3.1, or if `config.assets.initialize_on_precompile` is set to false, then add this to `config/environments/production.rb`.
 
-    config.assets.precompile += %w( dj_mon.js dj_mon.css)
+    config.assets.precompile += %w( dj_mon/dj_mon.js dj_mon/dj_mon.css)
 
 Mount it in `routes.rb`
 
