@@ -37,7 +37,7 @@ namespace :test do
 
 end
 
-task default: 'test:all'
+task :default=> 'test:all'
 
 Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
