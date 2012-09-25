@@ -25,7 +25,11 @@ Or install it yourself as:
 
 ## Note
 
-Supports `activerecord` and `mongoid`.
+* Supports `activerecord` and `mongoid`.
+* Supports `ruby 1.8.7` or higher for `activerecord`. `delayed_job_mongoid` depends
+  on `mongoid 3.0` which needs ruby 1.9, so there is no support for `ruby
+  1.8.7` for that.
+
 
 ## Usage
 

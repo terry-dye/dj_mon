@@ -6,8 +6,8 @@ require "config/environment.rb"
 puts "Running tests for #{Delayed::Worker.backend}"
 
 require "rails/test_help"
-require_relative '../support/test_job'
-require_relative '../support/failing_test_job'
+require File.expand_path('../../support/test_job', __FILE__)
+require File.expand_path('../../support/failing_test_job', __FILE__)
 
 Rails.backtrace_cleaner.remove_silencers!
 
