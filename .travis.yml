@@ -5,6 +5,8 @@ rvm:
 branches:
   only:
     - master
+services:
+  - mongodb
 notifications:
   disabled: true
 before_script:
