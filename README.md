@@ -57,7 +57,9 @@ Now visit `http://localhost:3000/dj_mon` and profit!
 ## Contributing
 
 ### Things to do
+* Rails 4 compatibility.
 * Mostly in the iPhone app. Mentioned in the [README](https://github.com/akshayrawat/dj_mon_iphone).
+
 
 ### Running the test suite
 
