@@ -1,6 +1,7 @@
 # DJ Mon [![Build Status](https://secure.travis-ci.org/akshayrawat/dj_mon.png?branch=master)](http://travis-ci.org/akshayrawat/dj_mon)
 
 A Rails engine based frontend for Delayed Job. It also has an [iPhone app](http://itunes.apple.com/app/dj-mon/id552732872).
+This was forked from the original project: https://github.com/akshayrawat/dj_mon. It fixes a bug when loading a payload with a Deserialization problem.
 
 ## Demo
 * [A quick video tour](http://www.akshay.cc/dj_mon/)

@@ -8,12 +8,11 @@ Gem::Specification.new do |s|
   s.summary         = "A Frontend for Delayed Job."
   s.description     = "A Rails engine based frontend for Delayed Job"
   s.files           = Dir["{app,lib,config,vendor}/**/*"] + ["MIT-LICENSE", "Rakefile", "Gemfile", "README.md"]
-  s.authors         = ["Akshay Rawat", "Timo Schilling"]
+  s.authors         = ["Akshay Rawat", "Timo Schilling", "Jonathan O'Connor"]
   s.email           = ["projects@akshay.cc"]
   s.homepage        = "https://github.com/akshayrawat/dj_mon"
 
   s.add_dependency "rails", ">= 3.1"
-  s.add_dependency "haml", ">= 3.1"
 
   s.add_development_dependency 'delayed_job_active_record'
   s.add_development_dependency 'delayed_job_mongoid'
