@@ -38,14 +38,14 @@ $(function(){
     $('.modal').hide().remove();
   });
 
-  (function refreshCount() {
+  function refreshCount() {
     $.getJSON(dj_counts_dj_reports_url).success(function(data){
       var template = $('#dj_counts_template').html();
       var output = Mustache.render(template, data);
       $('#dj-counts-view').html(output);
       setTimeout(refreshCount, 5000);
     });
-  })();
-
-})
+  }
+  refreshCount();
+});
 

@@ -38,6 +38,7 @@
         <th class="date">Run at</th>
         <th class="date">Created at</th>
         <th class="date">Failed at</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -69,18 +70,17 @@
         <td class="date">
           {{#failed}}
           {{failed_at}}
+          {{/failed}}
+        </td>
+        <td>
+          {{#failed}}
           <%= form_tag CGI.unescape(retry_dj_report_url(:id => "{{id}}")), :method => :post, :class => 'form-inline' do %>
             <%= submit_tag 'Retry', :class => 'btn btn-info btn-mini' %>
           <% end %>
-          <%= form_tag CGI.unescape(dj_report_url(:id => "{{id}}")), :method => :delete, :class => 'form-inline' do %>
-            <%= submit_tag 'Delete', :class => 'btn btn-danger btn-mini' %>
-          <% end %>
           {{/failed}}
-          {{#queued}}
           <%= form_tag CGI.unescape(dj_report_url(:id => "{{id}}")), :method => :delete, :class => 'form-inline' do %>
             <%= submit_tag 'Delete', :class => 'btn btn-danger btn-mini' %>
           <% end %>
-          {{/queued}}
         </td>
       </tr>
       {{/.}}
