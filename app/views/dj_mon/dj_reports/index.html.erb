@@ -80,7 +80,7 @@
           <%= form_tag CGI.unescape(dj_report_url(:id => "{{id}}")), :method => :delete, :class => 'form-inline' do %>
             <%= submit_tag 'Delete', :class => 'btn btn-danger btn-mini' %>
           <% end %>
-          {{/failed}}
+          {{/queued}}
         </td>
       </tr>
       {{/.}}
